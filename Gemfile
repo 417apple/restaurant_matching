@@ -44,7 +44,6 @@ group :development, :test do
 end
 
 
-gem 'pg', '~> 0.19.0', group: :production
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -80,3 +79,7 @@ gem 'cloudinary'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'ransack'
+
+group :production do
+  gem 'pg'
+end
