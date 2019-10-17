@@ -43,9 +43,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-group :production do
-  gem 'pg'
-end
+
+gem 'pg', '~> 0.19.0', group: :production
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
