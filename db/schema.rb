@@ -44,11 +44,9 @@ ActiveRecord::Schema.define(version: 2019_10_03_142932) do
 
   create_table "relationships", force: :cascade do |t|
     t.integer "user"
-    t.integer "follow_id"
+    t.integer "follow"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["follow_id"], name: "index_relationships_on_follow_id"
-    t.index [nil, "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
   end
 
   create_table "restaurants", force: :cascade do |t|
