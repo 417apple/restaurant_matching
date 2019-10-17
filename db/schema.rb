@@ -13,21 +13,17 @@
 ActiveRecord::Schema.define(version: 2019_10_03_142932) do
 
   create_table "entries", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "room_id"
+    t.integer "user"
+    t.integer "room"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_entries_on_room_id"
-    t.index ["user_id"], name: "index_entries_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "restaurant_id"
     t.integer "user_id"
+    t.integer "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["restaurant_id"], name: "index_likes_on_restaurant_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "maps", force: :cascade do |t|
@@ -39,23 +35,20 @@ ActiveRecord::Schema.define(version: 2019_10_03_142932) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "room_id"
+    t.integer "user"
+    t.integer "room"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_messages_on_room_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "relationships", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "user"
     t.integer "follow_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["follow_id"], name: "index_relationships_on_follow_id"
-    t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
-    t.index ["user_id"], name: "index_relationships_on_user_id"
+    t.index [nil, "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
   end
 
   create_table "restaurants", force: :cascade do |t|
