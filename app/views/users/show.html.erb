@@ -1,0 +1,74 @@
+<div class="users_show">
+  <br><br><br><br><br>
+  <div class="block">
+      <div class="block-image">
+          <img src=<%= @user.cl_image %> class = "icon_image">
+      </div>
+      <div class="block-text">
+        <%= render partial: "relationships/follow_button",locals: {user: @user} %>
+          <% if @isRoom == true %>
+            <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
+          <% else %>
+            <%= form_for @room do |f| %>
+              <%= fields_for @entry do |e| %>
+                <%= e.hidden_field :user_id, :value=> @user.id %>
+              <% end %>
+              <%= f.submit "チャットを始める" %>
+            <% end %>
+          <% end %>
+      </div>
+      <h3>follow</h3>
+      <strong id="following" class="stat">
+        <%= link_to(@follows.count, following_user_path) %>
+      </strong>
+      <h3>follower</h3>
+      <strong id="following" class="stat">
+        <%= link_to(@followers.count, followers_user_path) %>
+      </strong>
+      </div>
+
+
+
+  <div class="container">
+    <div class="item"><h3><%= @user.name %></h3><br>
+      <% if @user.visiter  ==1%>
+      <h3>visiter</h3>
+    <% else %>
+      <h3>japanese</h3>
+    <% end %><br>
+      <h3><%= @user.comment %></h3></div>
+
+    <div class="tab_wrap">
+    	<input id="tab1" type="radio" name="tab_btn" checked>
+    	<input id="tab2" type="radio" name="tab_btn">
+
+    	<div class="tab_area">
+        <%if @user.visiter ==2%>
+    		<label class="tab1_label" for="tab1">投稿一覧</label>
+        <% end %>
+
+    		<label class="tab2_label" for="tab2">いいね</label>
+    	</div>
+    	<div class="panel_area">
+    		<div id="panel1" class="tab_panel">
+          <% @restaurants.each do |t|%>
+          <%= link_to("/restaurants/#{t.id}") do %>
+             <%= cl_image_tag t.cl_image.to_s %>
+          <% end %>
+          <% end %>
+
+    		</div>
+    		<div id="panel2" class="tab_panel">
+        <% @user.liked_restaurants.each do |t| %>
+        <%= link_to("/restaurants/#{t.id}") do %>
+             <%= cl_image_tag t.cl_image.to_s %>
+          <% end %>
+          <% end %>
+    		</div>
+    	</div>
+    </div>
+
+  </div>
+
+</div>
+  </div>

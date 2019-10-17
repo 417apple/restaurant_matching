@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dopf5b5sf
+  api_key: '484397128497218'
+  api_secret: 57lO4kbx1KUpSwhLpcPL5qfo5lk
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dopf5b5sf
+  api_key: '484397128497218'
+  api_secret: 57lO4kbx1KUpSwhLpcPL5qfo5lk
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dopf5b5sf
+  api_key: '484397128497218'
+  api_secret: 57lO4kbx1KUpSwhLpcPL5qfo5lk
+  enhance_image_tag: true
+  static_file_support: false

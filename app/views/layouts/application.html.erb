@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>restaurant_matching</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+
+  <body>
+    <% if flash[:notice] %>
+  <div class="flash">
+    <%= flash[:notice] %>
+  </div>
+    <% end %>
+
+   <header class="header-nav">
+     <%= form_tag('/restaurants', method: :get) do %>
+       <%= text_field_tag :restaurant  %>
+       <%= submit_tag 'Search',:name => nil %>
+     <% end %>
+      <nav><%= link_to "投稿一覧", restaurants_path %></nav>
+      <% if user_signed_in?%>
+      <%if current_user.visiter ==2%>
+      <nav><%= link_to "投稿", new_restaurant_path %></nav>
+      <%end%>
+      <%end%>
+
+      <nav><%= link_to "user一覧ページへ", users_path %></nav>
+      <% if user_signed_in?%>
+      <nav><%= link_to 'Log out', destroy_user_session_path, method: :delete %></nav>
+      <nav><%= link_to "マイページへ","/mypages/#{current_user.id}"%></nav>
+
+      <%else%>
+      <nav><%= link_to 'Log in', new_user_session_path %></nav>
+      <nav><%= link_to 'Sign up', new_user_registration_path %></nav>
+      <%end%>
+   </header>
+
+    <%= yield %>
+
+   <footer>
+   <p>Copyright © Yuri Suzuki All Rights Reserved.</p>
+   </footer>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+// Place all the styles related to the mypages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width:1200px;
+
+}
+
+.block {
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+  width:1200px;
+
+}
+
+.icon_image {
+  width: 200px;
+  height: 200px;
+  //サイズ指定
+  border-radius: 100px;
+  //画像を丸くする
+  object-fit: cover;
+  //タテヨコ比を変えないままトリミング
+}
+
+// .tab_wrap{
+//   width:1200px; margin:80px auto;}
+// input[type="radio"]{display:none;}
+// .tab_area{font-size:0; margin:0 10px;}
+// .tab_area label{width:150px; margin:0 5px; display:inline-block; padding:12px 0; color:#999; background:#ddd; text-align:center; font-size:13px; cursor:pointer; transition:ease 0.2s opacity;}
+// .tab_area label:hover{opacity:0.5;}
+//
+// .tab_panel{width:100%; padding:80px 0; display:none;}
+// .tab_panel p{font-size:14px; letter-spacing:1px; text-align:center;}
+//
+// #tab1:checked ~ .tab_area .tab1_label{color:#000;}
+// #tab1:checked ~ .panel_area #panel1{display:block;}
+// #tab2:checked ~ .tab_area .tab2_label{color:#000;}
+// #tab2:checked ~ .panel_area #panel2{display:block;}

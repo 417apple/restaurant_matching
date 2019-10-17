@@ -1,0 +1,153 @@
+// Place all the styles related to the restaurants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.like-btn {
+  color: #8899a6;
+}
+
+.like-btn-unlike {
+  color: #ff2581;
+}
+
+#first-block  {
+  color: #FAFAFA;
+  background-image: url("/first-back2.jpg");
+  background-size: cover;
+  height: 1000px;
+  font-size: 100px;
+  font-family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.title-container {
+  text-align: center;
+  font-size: 50px;
+}
+h1{font-size: 80px;
+}
+h3{
+  font-size: 70px;
+}
+
+#second-block {
+  color: #1e2632;
+  font-size: 20px;
+  font-family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  height: 1000px;
+}
+
+#cardlayout-wrap {
+   justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    margin: 2em auto;
+    max-width: 1200px;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+}
+
+/* リンクテキストの下線を非表示 */
+a.card-link {
+    text-decoration: none;
+}
+
+/* カードレイアウト内の画像を幅いっぱいに表示 */
+#cardlayout-wrap img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.card-figure {
+    margin: 0;
+    padding: 0;
+}
+
+/* カードレイアウトのタイトル部分 */
+.card-title {
+    margin: 0.6em 0 0;
+    text-align: center;
+    font-size: 35px;
+}
+
+/* カードレイアウトの説明文部分 */
+.card-text-tax {
+    margin: 0;
+    padding: 1em;
+    color: #4a4a4a;
+    font-size: 15px;
+}
+
+/* カードレイアウトを1カラムで配置 */
+.card-list {
+    margin: 0.5em auto;
+    padding: 0;
+    width: 100%;
+    background: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    flex-basis:500px;
+}
+
+/* 画面幅768px以上の場合カードレイアウトを2カラムで配置 */
+
+
+#card {
+    justify-content: center;
+    display: flex;
+    width: 1000px;
+    width: 100%;
+}
+
+/* カードレイアウト内の画像を幅いっぱいに表示 */
+#card img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* カードレイアウトのタイトル部分 */
+.title {
+    margin: 0.6em 0 0;
+    text-align: center;
+    font-size: 45px;
+}
+
+/* カードレイアウトの説明文部分 */
+.card-tax {
+    margin: 0;
+    padding: 1em;
+    color: #4a4a4a;
+    font-size: 15px;
+
+}
+
+/* カードレイアウトを1カラムで配置 */
+.one-card {
+    margin: 0.5em auto;
+    padding: 0;
+    width: 96%;
+    background: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    flex-basis:1200px;
+}
+/* 画面幅768px以上の場合カードレイアウトを2カラムで配置 */
+@media all and (min-width: 768px) {
+    .card-list {
+        width: calc(96% / 2); /* 96%幅を2で割るという指定 */
+    }
+}
+
+/* 画面幅992px以上の場合カードレイアウトを3カラムで配置 */
+@media all and (min-width: 992px) {
+    .card-list {
+        width: calc(96% / 3); /* 96%幅を3で割るという指定 */
+}
+}

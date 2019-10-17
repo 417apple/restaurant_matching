@@ -1,0 +1,49 @@
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+      <h1 class="text-center font-weight-bold pt-5">新規投稿</h1>
+      <%= form_for @restaurant do |f| %>
+         <% @restaurant.errors.full_messages.each do |message| %>
+         <%= message %>
+         <% end %>
+
+     <div class="field pt-3">
+       <%= f.label :name %><br />
+       <%= f.text_field :name, :placeholder => "店名を入力してください",  class: "col-md-12" %>
+     </div>
+
+     <div class="field pt-3">
+       <%= f.label :cl_image %><br />
+       <%= f.file_field :cl_image, class: "col-md-12" %>
+     </div>
+
+     <div class="field pt-3">
+       <%= f.label :comment %><br />
+       <%= f.text_area :comment, :placeholder => "コメントを入力してください(例 very good!)",size: 140, class: "col-md-12" %>
+     </div>
+
+     <div class="field pt-3">
+       <%= f.label :address %><br />
+       <%= f.text_field :address, :placeholder => "住所を入力してください (例 shibuya)", class: "col-md-12" %>
+     </div>
+
+     <div class="field pt-3">
+       <%= f.label :businesshour %><br />
+       <%= f.time_select :opening %>~<%= f.time_select :closing %>
+     </div>
+
+     <div class="actions pt-3">
+       <%= f.submit "投稿する", class: "btn btn-primary" %>
+     </div>
+     <% end %>
+     <div class="pt-3">
+     </div>
+   </div>
+   <div class="col-md-1">
+
+   </div>
+ </div>
+</div>

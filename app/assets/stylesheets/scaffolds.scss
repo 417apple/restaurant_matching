@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  height: 64px;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+
+.header-menus {
+  float: right;
+  padding-right: 20px;
+}
+
+.header-menus li {
+  float: left;
+  line-height: 64px;
+  font-size: 13px;
+  color: white;
+  padding-left: 15px;
+}
+
+.header-menus a {
+  float: left;
+  font-size: 13px;
+  color: white;
+}
+
+.header-menus .fa {
+  padding-right: 5px;
+}
+
+.header-menus input[type="submit"] {
+  padding: 0 20px;
+  float: left;
+  line-height: 64px;
+  color: white;
+  margin: 0;
+  font-size: 13px;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #000;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+th {
+  padding-bottom: 5px;
+}
+
+td {
+  padding: 0 5px 7px;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+label {
+  display: block;
+}

@@ -1,0 +1,34 @@
+<!--   First block Start   -->
+<section id="first-block">
+<br><br><br><br><br>
+<div class="title-container">
+  <h1>Restaurant Matching</h1><br>
+  <h3>~ Visiter × Japanese ~</h3>
+</div>
+
+</section>
+<!--   First block End   -->
+
+<section id="second-block">
+<%= page_entries_info @restaurants %>
+<br><br><br>
+<div id="cardlayout-wrap"><!-- カードレイアウトをラッピング -->
+  <% @restaurants.each do |t|  %>
+    <section class="card-list">
+        <a class="card-link">
+          <%= link_to("/restaurants/#{t.id}") do %>
+            <figure class="card-figure"><img src=<%= t.cl_image %>></figure>
+          <% end %>
+            <h2 class="card-title"><%= t.name%></h2>
+            <p class="card-text-tax"><%=t.comment%></p>
+        </a>
+    </section>
+  <% end %>
+</div>
+
+
+<br>
+  <%= paginate @restaurants %>
+
+<br>
+</section>
