@@ -8,12 +8,17 @@
         <%= button_to "プロフィール編集", profile_edit_path, {method: :get} %>
       </div>
       <h3>follow</h3>
+
+      <% if @follows.exists? %>
       <strong id="following" class="stat">
         <%= link_to(@follows.count, following_user_path) %>
       </strong>
+      <% end %>
       <h3>follower</h3>
       <strong id="following" class="stat">
+        <% if @followers.exists? %>
         <%= link_to(@followers.count, followers_user_path) %>
+        <% end %>
       </strong>
       </div>
 
