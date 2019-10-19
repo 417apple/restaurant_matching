@@ -17,7 +17,7 @@
     <section class="card-list">
         <a class="card-link">
           <%= link_to("/restaurants/#{t.id}") do %>
-            <figure class="card-figure"><img src=<%= t.cl_image %>></figure>
+            <%= image_tag  t.cl_image_url,width:400,class: "card-figure" %>
           <% end %>
             <h2 class="card-title"><%= t.name%></h2>
             <p class="card-text-tax"><%=t.comment%></p>

@@ -1,7 +1,7 @@
 <br><br><br><br><br><br>
 <div id="card"><!-- カードレイアウトをラッピング -->
     <section class="one-card">
-            <figure class="card-figure"><img src=<%= @restaurant.cl_image %>></figure>
+      <%= image_tag  @restaurant.cl_image_url,width:500,class: "card-figure" %>
             <h2 class="title"><%= @restaurant.name%></h2>
             <p class="card-tax">
               <%= @restaurant.user.name%><br>
