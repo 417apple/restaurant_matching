@@ -15,11 +15,13 @@ Rails.application.routes.draw do
 
   root to: "restaurants#index"
 
-  resources :restaurants
+  resources :restaurants do
+    resource :likes, only: [:create, :destroy]
+  end
 
   resources :users, only: [:index, :show]
 
-  resources :likes, only: [:create, :destroy]
+
 
   resources :messages, only: [:create]
 
@@ -40,7 +42,7 @@ Rails.application.routes.draw do
     end
   end
 
-  
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
