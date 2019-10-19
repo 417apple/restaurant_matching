@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-
+ mount_uploader :cl_image, CloudinaryImageUploader
  has_many :restaurants, dependent: :destroy
 
  has_many :likes, dependent: :destroy
@@ -42,8 +42,8 @@ class User < ApplicationRecord
      self.followings.include?(other_user)
  end
 
- 
- mount_uploader :cl_image, CloudinaryImageUploader
+
+
 
  def self.find_for_oauth(auth)
    user = User.where(uid: auth.uid, provider: auth.provider).first

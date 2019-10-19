@@ -1,6 +1,10 @@
 class CloudinaryImageUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
+  CarrierWave.configure do |config|
+    config.cache_storage = :file
+  end
+
   version :retina do
     process resize_to_fit: [640, 640]
   end
