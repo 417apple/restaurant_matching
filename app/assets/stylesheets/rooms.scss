@@ -1,6 +1,7 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.rooms_show{
 .line {
   padding: 20px 10px;
   max-width: 450px;
@@ -90,4 +91,5 @@
   border-left: 18px solid #30e852;
   -webkit-transform: rotate(-35deg);
   transform: rotate(-35deg);
+}
 }

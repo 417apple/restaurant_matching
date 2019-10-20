@@ -1,13 +1,13 @@
-<br><br><br><br><br>
-<h1>ユーザー一覧</h1>
-
-<% @users.each do |user| %>
-<% if user==current_user%>
- <%next%>
-<%end%>
-  <img src=<%= user.cl_image %> class = "icon_image">
-  <%= link_to(user.name, "/users/#{user.id}") %>
-  <hr>
-
-
-<% end %>
+<section class="users_index">
+  <br><br><br><br><br>
+  <div class="users">
+    <% @users.each do |user| %>
+       <div class="user">
+          <% if user==current_user%>
+            <%next%>
+          <%end%>
+          <img src=<%= user.cl_image %> class = "icon_image">
+          <%= link_to(user.name, "/users/#{user.id}") %>
+          <% end %>
+  </div>
+</section>

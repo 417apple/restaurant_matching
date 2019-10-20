@@ -55,5 +55,21 @@
   #tab1:checked ~ .panel_area #panel1{display:block;}
   #tab2:checked ~ .tab_area .tab2_label{color:#000;}
   #tab2:checked ~ .panel_area #panel2{display:block;}
+}
 
+.users_index, .users_show_follow, .users_show_follower{
+  .icon_image {
+    width: 70px;
+    height: 70px;
+    //サイズ指定
+    border-radius: 100px;
+    //画像を丸くする
+    object-fit: cover;
+    //タテヨコ比を変えないままトリミング
+  }
+
+  .users {
+      display: flex;
+      justify-content: center;
+  }
 }

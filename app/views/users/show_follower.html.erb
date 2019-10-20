@@ -1,7 +1,13 @@
-<br><br><br><br><br>
-
-
-<% @user.followers.each do |user| %>
-<%= user.name %>
-  <%= link_to '詳細', user_path(user) %>
-<% end %>>
+<section class="users_show_follower">
+  <br><br><br><br><br>
+  <div class="users">
+    <% @user.followers.each do |user| %>
+       <div class="user">
+          <% if user==current_user%>
+            <%next%>
+          <%end%>
+          <img src=<%= user.cl_image %> class = "icon_image">
+          <%= link_to(user.name, "/users/#{user.id}") %>
+          <% end %>
+  </div>
+</section>
