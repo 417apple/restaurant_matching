@@ -53,7 +53,7 @@
     		<div id="panel1" class="tab_panel">
           <% @restaurants.each do |t|%>
           <%= link_to("/restaurants/#{t.id}") do %>
-             <%= cl_image_tag t.cl_image.to_s %>
+          <%= image_tag  t.cl_image_url,width:400,class: "card-figure" %>
           <% end %>
           <% end %>
 
@@ -61,7 +61,7 @@
     		<div id="panel2" class="tab_panel">
         <% @user.liked_restaurants.each do |t| %>
         <%= link_to("/restaurants/#{t.id}") do %>
-             <%= cl_image_tag t.cl_image.to_s %>
+        <%= image_tag  t.cl_image_url,width:400,class: "card-figure" %>
           <% end %>
           <% end %>
     		</div>

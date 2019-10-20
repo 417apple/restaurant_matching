@@ -30,7 +30,7 @@
    flex-direction: row;
    justify-content: flex-end;
    align-items: center;
- }
+
 
 
  nav {
@@ -51,12 +51,17 @@ a:visited{
 a:hover {
   color: #fff;
 }
+}
 
 body	{
   color:#1e2632;
 	background-color:#F5F1E9;
   font-family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 
+  a{
+    color:#1e2632 ;
+    text-decoration: none;
+  }
 }
 
 
