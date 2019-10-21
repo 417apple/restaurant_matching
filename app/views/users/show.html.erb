@@ -3,6 +3,7 @@
   <div class="block">
       <div class="block-image">
           <img src=<%= @user.cl_image %> class = "icon_image">
+
       </div>
       <div class="block-text">
         <%= render partial: "relationships/follow_button",locals: {user: @user} %>
@@ -17,6 +18,7 @@
             <% end %>
           <% end %>
       </div>
+      
       <h3>follow</h3>
       <strong id="following" class="stat">
         <%= link_to(@follows.count, following_user_path) %>

@@ -1,20 +1,20 @@
 class LikesController < ApplicationController
-
+before_action :set_function
 
   def create
+  
     @like = current_user.likes.new(restaurant_id: params[:restaurant_id])
-    if @like.save
-      redirect_to controller: 'restaurants', action: 'show', id: params[:restaurant_id]
-    else
-      redirect_to controller: 'restaurants', action: 'show', id: params[:restaurant_id], notice: "いいね失敗"
-    end
+    @like.save
+
   end
   def destroy
+
     @like = current_user.likes.find_by(restaurant_id: params[:restaurant_id])
-    if @like.destroy
-      redirect_to controller: 'restaurants', action: 'show', id: params[:restaurant_id]
-    else
-      redirect_to controller: 'restaurants', action: 'show', id: params[:restaurant_id], notice: "削除失敗"
-    end
+    @like.destroy
+  end
+
+  def set_function
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @id_name =  "#likes_container-#{@restaurant.id}"
   end
 end

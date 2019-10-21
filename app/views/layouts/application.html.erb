@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -19,11 +19,11 @@
     <% end %>
 
    <header class="header-nav">
+     <strong class="top"><nav><%= link_to "RestaurantMatching", restaurants_path %></nav></strong>
      <%= form_tag('/restaurants', method: :get) do %>
        <%= text_field_tag :restaurant  %>
        <%= submit_tag 'Search',:name => nil %>
      <% end %>
-      <nav><%= link_to "投稿一覧", restaurants_path %></nav>
       <% if user_signed_in?%>
       <%if current_user.visiter ==2%>
       <nav><%= link_to "投稿", new_restaurant_path %></nav>
@@ -33,7 +33,7 @@
       <nav><%= link_to "user一覧ページへ", users_path %></nav>
       <% if user_signed_in?%>
       <nav><%= link_to 'Log out', destroy_user_session_path, method: :delete %></nav>
-      <nav><%= link_to "マイページへ","/mypages/#{current_user.id}"%></nav>
+      <nav><%= link_to "mypage","/mypages/#{current_user.id}"%></nav>
 
       <%else%>
       <nav><%= link_to 'Log in', new_user_session_path %></nav>

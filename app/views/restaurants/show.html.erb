@@ -9,23 +9,8 @@
               <%=@restaurant.comment%><br>
               @<%=@restaurant.address%><br>
               <%= timechange(@restaurant.opening) %>~<%= timechange(@restaurant.closing) %></p>
-              <% if current_user== nil %>
-                <%= link_to("/users/sign_in") do %>
-                  <span class="fa fa-heart like-btn"></span>
-                <% end %>
-
-              <% elsif current_user.likes.find_by(restaurant_id: @restaurant.id) %>
-                <%= link_to restaurant_likes_path(@restaurant),method: :delete do %>
-                  <span class="fa fa-heart like-btn-unlike"></span>
-                <% end %>
-              <% else %>
-                <%= link_to restaurant_likes_path(@restaurant), method: :post do %>
-                  <span class="fa fa-heart like-btn"></span>
-                <% end %>
-              <% end %>
-              <%= @restaurant.likes.count %>
-
-              <script>
+              <%= render partial: "restaurants/likes",locals: {restaurant: @restaurant} %>
+<script>
                   function initMap() {
                       var test = {lat: <%= @latitude %>, lng: <%= @longitude %>};
                       var map = new google.maps.Map(document.getElementById('map'), {
@@ -76,6 +61,6 @@
                           <%end%>
 
     </section>
-  
+
 </div>
 </section>
