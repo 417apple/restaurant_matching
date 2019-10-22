@@ -6,7 +6,7 @@
       </div>
       <div class="col-md-10">
         <h1 class="text-center font-weight-bold pt-5">profile</h1>
-        <%= form_for current_user, url: {action: 'profile_update'} do |f| %>
+        <%= form_for current_user, url: {action: 'update'} do |f| %>
          <div class="field pt-3">
            <%= f.label :name %><br />
            <%= f.text_field :name, :placeholder => " Yuri", class: "col-md-12 form-control" %>
@@ -22,7 +22,7 @@
            <%= f.text_area :comment,:placeholder => " Hello! Nice to meet you. I have lived in Japan all the time, so I know many reasonable restaurants.", autofocus: true, class: "col-md-12" %>
          </div>
 
-         <label> <%=f.radio_button :visiter,1%>visiter</label>
+         <label> <%=f.radio_button :visiter,1%>visitor</label>
          <label><%=f.radio_button :visiter,2%>japanese</label>
 
 

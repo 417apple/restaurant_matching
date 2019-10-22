@@ -50,6 +50,29 @@ class UsersController < ApplicationController
     render 'show_follower'
   end
 
+  def edit
+  end
+
+  def update
+    current_user.assign_attributes(account_update_params)
+    if current_user.save
+	  redirect_to restaurants_path, notice: 'プロフィールを更新しました'
+    else
+      render "edit"
+    end
+  end
+
+  protected
+
+  def after_sign_up_path_for(resource)
+   edit_user_path
+  end
+
+  def configure_account_update_params
+   devise_parameter_sanitizer.permit(:account_update, keys: [:name, :comment, :visiter])
+  end
+
+
 
 
 
