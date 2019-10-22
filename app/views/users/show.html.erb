@@ -18,7 +18,7 @@
             <% end %>
           <% end %>
       </div>
-      
+
       <h3>follow</h3>
       <strong id="following" class="stat">
         <%= link_to(@follows.count, following_user_path) %>
@@ -34,7 +34,7 @@
   <div class="container">
     <div class="item"><h3><%= @user.name %></h3><br>
       <% if @user.visiter  ==1%>
-      <h3>visiter</h3>
+      <h3>visitor</h3>
     <% else %>
       <h3>japanese</h3>
     <% end %><br>
