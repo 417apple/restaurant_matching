@@ -64,9 +64,7 @@ class UsersController < ApplicationController
 
   protected
 
-  def after_sign_up_path_for(resource)
-   edit_user_path
-  end
+
 
   def configure_account_update_params
    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :comment, :visiter])

@@ -54,7 +54,7 @@
     		<div id="panel2" class="tab_panel">
         <% current_user.liked_restaurants.each do |t| %>
         <%= link_to("/restaurants/#{t.id}") do %>
-        <%= image_tag  t.cl_image_url,width:400,class: "card-figure" %>
+        <%= image_tag  t.cl_image_url,class: "card-figure" %>
           <% end %>
           <% end %>
     		</div>

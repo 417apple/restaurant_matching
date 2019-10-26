@@ -72,17 +72,25 @@ body	{
   }
 }
 
+body,
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 
 footer {
-
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    position:fixed;
+    bottom: 0px;
     height: 60px;
     background-color: #1e2632;
     font-size: 15px;
     color: #fff;
 
+    margin-top: auto;
 }

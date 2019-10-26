@@ -7,11 +7,11 @@ before_action :post_limit,{only:[:new, :create]}
 
   def index
     if params[:restaurant] == nil
-      @restaurants = Restaurant.all.order(id: "DESC").page(params[:page]).per(3)
+      @restaurants = Restaurant.all.order(id: "DESC").page(params[:page]).per(6)
     elsif params[:restaurant] == ""
-      @restaurants = Restaurant.all.order(id: "DESC").page(params[:page]).per(3)
+      @restaurants = Restaurant.all.order(id: "DESC").page(params[:page]).per(6)
     else
-      @restaurants = Restaurant.where("name LIKE ? ",'%' + params[:restaurant] + '%').order(id: "DESC").page(params[:page]).per(3)
+      @restaurants = Restaurant.where("name LIKE ? ",'%' + params[:restaurant] + '%').order(id: "DESC").page(params[:page]).per(6)
     end
   end
 

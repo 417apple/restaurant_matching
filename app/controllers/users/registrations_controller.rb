@@ -80,7 +80,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
-   profile_edit_path
+    edit_user_path(:id)
   end
 
   def configure_account_update_params

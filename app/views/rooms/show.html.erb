@@ -35,12 +35,12 @@
 
 
  <div class="post">
-   <div>
+   <div class="enter">
    <%= form_for @message do |f| %>
     <%= f.text_field :content, :placeholder => "メッセージを入力して下さい" , :size => 50 %>
     <%= f.hidden_field :room_id, :value => @room.id %>
    </div>
-   <div>
+   <div class="enter">
     <%= f.submit "投稿する" %>
    <% end %>
    <div>
