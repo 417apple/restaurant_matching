@@ -3,8 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .rooms_show{
   padding-top: 100px;
+
 .line {
-  padding: 20px 10px;
+  // padding: 20px 10px;
   max-width: 450px;
   margin: 15px auto;
   text-align: right;
@@ -12,13 +13,39 @@
   background: #7da4cd;
   height: 700px;
   overflow: auto;
-  
-  .post {
-    background-color: white;
-    width: 400px;
-    display: flex;
+  //
+  // .sbs-line:before {
+  //   content: "";
+  //
+  //     color: #fff;
+  //     font-weight: bold;
+  //     line-height: 1;
+  //     text-align: center;
+  //     width: 450px;
+  //     padding: 2em 0;
+  //     background: #263047;
+  //     top: 0; left: 0;
+  //     display: block;
+  //     margin-top: -60px;
+  //     margin-left: -10px;
+  // }
+  .sbs-line {
+    color: #fff;
+    font-weight: bold;
+    line-height: 1;
+    font-size:1.5rem;
+    text-align: center;
+    width: 450px;
+    padding: 1rem 0;
+    background: #263047;
+    // top: 0; left: 0;
+    display: block;
+    // margin-top: -60px;
+    // margin-left: -10px;
   }
-
+  .sbs-line+.sbs-line:before {
+      content: none;
+  }
 
   .balloon6 {
     width: 100%;
@@ -72,6 +99,7 @@
   /*以下、③右側の緑コメント*/
   .mycomment {
     margin: 10px 0;
+    z-index: 20;
   }
   .mycomment p {
     display: inline-block;
@@ -95,6 +123,15 @@
     -webkit-transform: rotate(-35deg);
     transform: rotate(-35deg);
   }
+
+}
+.post {
+  background-color: white;
+  width: 400px;
+  display: flex;
+  bottom: 145px;
+  right: 725px;
+  position: absolute
 
 }
 }
