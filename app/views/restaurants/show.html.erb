@@ -10,6 +10,15 @@
               @<%=@restaurant.address%><br>
               <%= timechange(@restaurant.opening) %>~<%= timechange(@restaurant.closing) %></p>
               <%= render partial: "restaurants/likes",locals: {restaurant: @restaurant} %>
+              <% if user_signed_in?%>
+
+              <% if @restaurant.user_id == current_user.id %>
+               <%= link_to "編集", edit_restaurant_path(@restaurant.id) %>
+               <%= link_to "削除", restaurant_path(@restaurant.id), method: :delete %>
+              <% end %>
+              <%else%>
+              <%end%>
+
 <script>
                   function initMap() {
                       var test = {lat: <%= @latitude %>, lng: <%= @longitude %>};
@@ -51,16 +60,7 @@
               <div id="map"></div>
 </div>
 
-                          <% if user_signed_in?%>
-
-                          <% if @restaurant.user_id == current_user.id %>
-                           <%= link_to "編集", edit_restaurant_path(@restaurant.id) %>
-                           <%= link_to "削除", restaurant_path(@restaurant.id), method: :delete %>
-                          <% end %>
-                          <%else%>
-                          <%end%>
 
     </section>
-
 </div>
 </section>
