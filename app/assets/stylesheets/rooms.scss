@@ -3,10 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .rooms_show{
   padding-top: 100px;
-  display:flex;  
 
 .line {
   // padding: 20px 10px;
+  position:  relative;
   max-width: 450px;
   margin: 15px auto;
   text-align: right;
@@ -130,9 +130,10 @@
   background-color: white;
   width: 400px;
   display: flex;
-  bottom: 145px;
-  right: 725px;
-  position: absolute
+  position:  absolute;
+  left:  5px;
+  bottom: 0px;
+
 
 }
 }
