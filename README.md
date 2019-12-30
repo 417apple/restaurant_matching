@@ -1,24 +1,13 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<h2>Restaurant Matching　訪日外国人×日本人</h2><br>
+<h3>1.サービス概要</h3><br>
+訪日外国人と日本人のマッチングガイドサービスです。まず日本人が訪日外国人に向けてオススメの飲食店の情報を投稿します。そしてDM機能を用いてマッチングしたらガイドとして案内してあげる仕組みです。<br>
+<h3>2.機能一覧</h3><br>
+  お気に入り登録機能（Ajaxによる非同期通信）,
+  記事一覧表示,記事詳細表示,記事投稿,
+  管理ユーザー登録,管理ユーザーログイン,Facebookアカウントログイン機能,
+  DM機能,
+  フォロー機能,
+  画像ファイルアップロード機能,
+  ページネーション機能,
+  検索機能,
+  Googlemap表示機能,
