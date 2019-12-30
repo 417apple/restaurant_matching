@@ -89,7 +89,9 @@ a.card-link {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     flex-basis:500px;
 }
-
+.card-figure{
+    margin:auto;
+}
 .card-figure:hover{
   opacity: 0.6;
   transition-duration: 0.3s;
@@ -110,9 +112,17 @@ a.card-link {
     display: block;
     max-width: 100%;
     height: auto;
-    margin:auto;    
+    margin:auto;
 }
-
+.icon_image {
+  width: 100px;
+  height: 100px;
+  //サイズ指定
+  border-radius: 100px;
+  //画像を丸くする
+  object-fit: cover;
+  //タテヨコ比を変えないままトリミング
+}
 /* カードレイアウトのタイトル部分 */
 .title {
     margin: 0.6em 0 0;
@@ -126,6 +136,7 @@ a.card-link {
     padding: 1em;
     color: #4a4a4a;
     font-size: 25px;
+    text-align: center;
 
 }
 
