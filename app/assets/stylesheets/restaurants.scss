@@ -77,6 +77,7 @@ a.card-link {
     padding: 1em;
     color: #4a4a4a;
     font-size: 25px;
+    text-align: center;
 }
 
 /* カードレイアウトを1カラムで配置 */
@@ -87,6 +88,11 @@ a.card-link {
     background: #f0f0f0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     flex-basis:500px;
+}
+
+.card-figure:hover{
+  opacity: 0.6;
+  transition-duration: 0.3s;
 }
 
 /* 画面幅768px以上の場合カードレイアウトを2カラムで配置 */
@@ -104,6 +110,7 @@ a.card-link {
     display: block;
     max-width: 100%;
     height: auto;
+    margin:auto;    
 }
 
 /* カードレイアウトのタイトル部分 */

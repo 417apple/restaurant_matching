@@ -22,7 +22,7 @@
    <header class="header-nav">
      <strong class="top"><nav><%= link_to "RestaurantMatching", restaurants_path %></nav></strong>
      <%= form_tag('/restaurants', method: :get) do %>
-       <%= text_field_tag :restaurant  %>
+       <%= text_field_tag :restaurant,'', :placeholder => "店名を入力"%>
        <%= submit_tag 'Search',:name => nil %>
      <% end %>
       <% if user_signed_in?%>
@@ -31,7 +31,7 @@
       <%end%>
       <%end%>
 
-      <nav><%= link_to "user一覧ページへ", users_path %></nav>
+      <nav><%= link_to "user一覧", users_path %></nav>
       <% if user_signed_in?%>
       <nav><%= link_to 'Log out', destroy_user_session_path, method: :delete %></nav>
       <nav><%= link_to "mypage","/mypages/#{current_user.id}"%></nav>

@@ -6,7 +6,6 @@
   <h1>Restaurant Matching</h1>
   <h3>~ Visitor × Japanese ~</h3>
 </div>
-
 </section>
 <!--   First block End   -->
 
@@ -14,15 +13,15 @@
 <%= page_entries_info @restaurants %>
 <br><br><br>
 <div id="cardlayout-wrap"><!-- カードレイアウトをラッピング -->
-  <% @restaurants.each do |t|  %>
+  <% @restaurants.each do |r|  %>
     <section class="card-list">
         <a class="card-link">
-          <%= link_to("/restaurants/#{t.id}") do %>
-            <%= image_tag  t.cl_image_url,width:400,class: "card-figure" %>
+          <%= link_to("/restaurants/#{r.id}") do %>
+            <%= image_tag  r.cl_image_url,width:500,class: "card-figure" %>
           <% end %>
-            <h2 class="card-title"><%= t.name%></h2>
-            <h2 class="card-text-tax"><%=t.comment%></h2>
-            <h3 class="card-text-tax">@<%=t.address%></h3>
+            <h2 class="card-title"><%= r.name%></h2>
+            <h2 class="card-text-tax"><%=r.comment%></h2>
+            <h3 class="card-text-tax">@<%=r.address%></h3>
         </a>
     </section>
   <% end %>
