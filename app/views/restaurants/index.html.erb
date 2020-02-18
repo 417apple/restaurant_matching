@@ -10,7 +10,7 @@
 <!--   First block End   -->
 
 <section id="second-block">
-<%= page_entries_info @restaurants %>
+<%= page_entries_info @restaurants %><%= link_to 'エクスポート', restaurants_path(format: :csv), class: 'btn btn-primary mb-5'%>
 <br><br><br>
 <div id="cardlayout-wrap"><!-- カードレイアウトをラッピング -->
   <% @restaurants.each do |r|  %>

@@ -13,6 +13,10 @@ before_action :post_limit,{only:[:new, :create]}
     else
       @restaurants = Restaurant.where("name LIKE ? ",'%' + params[:restaurant] + '%').order(id: "DESC").page(params[:page]).per(6)
     end
+    respond_to do |format|
+      format.html
+      format.csv { send_data @restaurants.generate_csv, filename: "restaurants-#{Time.zone.now.strftime('%Y%m%d%S')}.csv" } # --- ②
+    end
   end
 
   def new
