@@ -9,16 +9,21 @@
       <div id="follow_button_<%= @user.id %>">
         <%= render partial: "relationships/follow_button",locals: {user: @user} %>
       </div>
-          <% if @isRoom == true %>
-            <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
-          <% else %>
-            <%= form_for @room do |f| %>
-              <%= fields_for @entry do |e| %>
-                <%= e.hidden_field :user_id, :value=> @user.id %>
-              <% end %>
-              <%= f.submit "チャットを始める" %>
-            <% end %>
+
+      <% if current_user== nil %>
+          <%= link_to("/users/sign_in") do %>
+            <span class="fas fa-comment-dots fa-4x fa-fw faa-wrench animated"></span>
           <% end %>
+      <% elsif @isRoom == true %>
+        <p><a href="/rooms/<%= @roomId %>"><i class="fas fa-comment-dots fa-4x fa-fw faa-wrench animated"></i></a>
+      <% else %>
+        <%= form_for @room do |f| %>
+          <%= fields_for @entry do |e| %>
+            <%= e.hidden_field :user_id, :value=> @user.id %>
+          <% end %>
+          <%= f.submit "チャットを始める" %>
+        <% end %>
+      <% end %>
       </div>
 
       <h3>follow</h3>
@@ -30,8 +35,6 @@
         <%= link_to(@followers.count, followers_user_path) %>
       </strong>
       </div>
-
-
 
   <div class="container">
     <div class="item"><h3><%= @user.name %></h3><br>

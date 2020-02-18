@@ -5,7 +5,7 @@
       <%= image_tag  @restaurant.cl_image_url,width:500 %>
             <h2 class="title"><%= @restaurant.name%></h2>
             <p class="card-tax">
-              <img src=<%= @restaurant.user.cl_image %> class = "icon_image"><%= @restaurant.user.name%>さん<br>
+            <img src=<%= @restaurant.user.cl_image %> class = "icon_image"><%= @restaurant.user.name%>さん<br>
               <%=@restaurant.comment%><br>
               @<%=@restaurant.address%><br>
               <%= timechange(@restaurant.opening) %>~<%= timechange(@restaurant.closing) %></p>

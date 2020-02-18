@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!,{only: [:show]}
+
   def index
     @users = User.all.order(id: "DESC")
   end
@@ -11,28 +11,27 @@ class UsersController < ApplicationController
     @followers = @user.followers
     @restaurants = @user.restaurants.order(id: "DESC")
 
-    @currentUserEntry=Entry.where(user_id: current_user.id)
-    @userEntry=Entry.where(user_id: @user.id)
-    if @user.id == current_user.id
-    else
-      @currentUserEntry.each do |cu|
-        @userEntry.each do |u|
-          if cu.room_id == u.room_id then
-            @isRoom = true
-            @roomId = cu.room_id
+    unless current_user== nil
+      @currentUserEntry=Entry.where(user_id: current_user.id)
+      @userEntry=Entry.where(user_id: @user.id)
+      if @user.id == current_user.id
+      else
+        @currentUserEntry.each do |cu|
+          @userEntry.each do |u|
+            if cu.room_id == u.room_id then
+              @isRoom = true
+              @roomId = cu.room_id
+            end
           end
         end
+        if @isRoom
+        else
+          @room = Room.new
+          @entry = Entry.new
+        end
       end
-
-      if @isRoom
-      else
-        @room = Room.new
-        @entry = Entry.new
-      end
-
     end
   end
-
 
   def new
     @user = User.new
@@ -64,14 +63,7 @@ class UsersController < ApplicationController
 
   protected
 
-
-
   def configure_account_update_params
    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :comment, :visiter])
   end
-
-
-
-
-
 end

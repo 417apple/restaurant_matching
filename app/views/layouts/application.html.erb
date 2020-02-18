@@ -7,7 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/30ef5700b0.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
   </head>
 
@@ -34,7 +34,9 @@
       <nav><%= link_to "user一覧", users_path %></nav>
       <% if user_signed_in?%>
       <nav><%= link_to 'Log out', destroy_user_session_path, method: :delete %></nav>
-      <nav><%= link_to "mypage","/mypages/#{current_user.id}"%></nav>
+      <nav>
+      <%= link_to "mypage","/mypages/#{current_user.id}"%>
+      </nav>
 
       <%else%>
       <nav><%= link_to 'Log in', new_user_session_path %></nav>
