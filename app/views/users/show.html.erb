@@ -6,7 +6,9 @@
 
       </div>
       <div class="block-text">
+      <div id="follow_button_<%= @user.id %>">
         <%= render partial: "relationships/follow_button",locals: {user: @user} %>
+      </div>
           <% if @isRoom == true %>
             <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
           <% else %>
