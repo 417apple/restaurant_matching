@@ -4,7 +4,6 @@ before_action :authenticate_user!,{only: [:new, :create, :edit, :update, :destro
 before_action :ensure_correct_user,{only:[:edit, :update, :destroy]}
 before_action :post_limit,{only:[:new, :create]}
 
-
   def index
     if params[:restaurant] == nil
       @restaurants = Restaurant.all.order(id: "DESC").page(params[:page]).per(6)
@@ -31,7 +30,6 @@ before_action :post_limit,{only:[:new, :create]}
        flash[:notice] = "投稿成功しました"
        redirect_to action: 'index'
      else
-
        render action: "new"
      end
   end
