@@ -10,9 +10,6 @@ class User < ApplicationRecord
  has_many :messages, dependent: :destroy
  has_many :entries, dependent: :destroy
 
-
- validates :comment, length: { maximum: 200 }
-
  validates :email, {uniqueness: true}
 
  devise :database_authenticatable, :registerable,
@@ -41,9 +38,6 @@ class User < ApplicationRecord
  def following?(other_user)
      self.followings.include?(other_user)
  end
-
-
-
 
  def self.find_for_oauth(auth)
    user = User.where(uid: auth.uid, provider: auth.provider).first
