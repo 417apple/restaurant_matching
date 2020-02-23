@@ -1,4 +1,5 @@
 class Restaurant < ApplicationRecord
+  validates :name, presence: true
   mount_uploader :cl_image, CloudinaryImageUploader
   belongs_to :user
   has_many :likes, dependent: :destroy
