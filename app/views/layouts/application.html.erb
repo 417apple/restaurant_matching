@@ -20,7 +20,7 @@
     <% end %>
 
    <header class="header-nav">
-     <strong class="top"><nav><%= link_to "RestaurantMatching", restaurants_path %></nav></strong>
+     <nav><strong class="top"><%= link_to "RestaurantMatching", restaurants_path %></strong></nav>
      <%= form_tag('/restaurants', method: :get) do %>
        <%= text_field_tag :restaurant,'', :placeholder => "店名を入力"%>
        <%= submit_tag 'Search',:name => nil %>

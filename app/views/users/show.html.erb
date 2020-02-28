@@ -1,5 +1,5 @@
 <section class="users_show">
-  <br><br><br><br><br>
+
   <div class="block">
       <div class="block-image">
           <img src=<%= @user.cl_image %> class = "icon_image">
@@ -63,7 +63,6 @@
           <%= image_tag  t.cl_image_url,class: "card-figure" %>
           <% end %>
           <% end %>
-
     		</div>
     		<div id="panel2" class="tab_panel">
         <% @user.liked_restaurants.each do |t| %>
@@ -74,8 +73,6 @@
     		</div>
     	</div>
     </div>
-
   </div>
-
 </div>
   </section>

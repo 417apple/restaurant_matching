@@ -148,6 +148,7 @@ a.card-link {
     background: #f0f0f0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     flex-basis:1200px;
+    padding-bottom: 100px;
 }
 /* 画面幅768px以上の場合カードレイアウトを2カラムで配置 */
 @media all and (min-width: 768px) {
